@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 analysis_options.yaml
@@ -48,20 +47,3 @@ lib/model/status_dto.dart
 lib/model/success_message.dart
 lib/model/user_address.dart
 pubspec.yaml
-test/ads_api_test.dart
-test/ads_dto_test.dart
-test/ads_list_test.dart
-test/error_message_dto_test.dart
-test/interest_dto_test.dart
-test/interest_list_test.dart
-test/interests_api_test.dart
-test/milestone_api_test.dart
-test/milestone_covered_test.dart
-test/onboarding_api_test.dart
-test/register_api_test.dart
-test/register_user_response_test.dart
-test/register_user_test.dart
-test/save_address_response_test.dart
-test/status_dto_test.dart
-test/success_message_test.dart
-test/user_address_test.dart

@@ -38,10 +38,10 @@ class RegisterUserResponse {
   String toString() => 'RegisterUserResponse[id=$id, token=$token]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'token'] = token;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+      json[r'token'] = this.token;
+    return json;
   }
 
   /// Returns a new [RegisterUserResponse] instance and imports its values from

@@ -44,14 +44,14 @@ class MilestoneCovered {
   String toString() => 'MilestoneCovered[distance=$distance, type=$type]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'distance'] = distance;
-    if (type != null) {
-      _json[r'type'] = type;
+    final json = <String, dynamic>{};
+      json[r'distance'] = this.distance;
+    if (this.type != null) {
+      json[r'type'] = this.type;
     } else {
-      _json[r'type'] = null;
+      json[r'type'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [MilestoneCovered] instance and imports its values from

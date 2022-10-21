@@ -32,9 +32,9 @@ class UserAddress {
   String toString() => 'UserAddress[address=$address]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'address'] = address;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'address'] = this.address;
+    return json;
   }
 
   /// Returns a new [UserAddress] instance and imports its values from

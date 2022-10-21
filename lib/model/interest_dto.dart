@@ -38,10 +38,10 @@ class InterestDto {
   String toString() => 'InterestDto[id=$id, name=$name]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'name'] = name;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+      json[r'name'] = this.name;
+    return json;
   }
 
   /// Returns a new [InterestDto] instance and imports its values from

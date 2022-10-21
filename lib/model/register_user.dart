@@ -44,11 +44,11 @@ class RegisterUser {
   String toString() => 'RegisterUser[email=$email, password=$password, username=$username]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'email'] = email;
-      _json[r'password'] = password;
-      _json[r'username'] = username;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'email'] = this.email;
+      json[r'password'] = this.password;
+      json[r'username'] = this.username;
+    return json;
   }
 
   /// Returns a new [RegisterUser] instance and imports its values from

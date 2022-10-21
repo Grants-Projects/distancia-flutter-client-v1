@@ -59,7 +59,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.distancia*
+All URIs are relative to *https://distancia-dlt.herokuapp.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

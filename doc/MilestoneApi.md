@@ -5,7 +5,7 @@
 import 'package:openapi/api.dart';
 ```
 
-All URIs are relative to *https://api.distancia*
+All URIs are relative to *https://distancia-dlt.herokuapp.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

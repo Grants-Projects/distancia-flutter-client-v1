@@ -38,10 +38,10 @@ class SaveAddressResponse {
   String toString() => 'SaveAddressResponse[id=$id, address=$address]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-      _json[r'address'] = address;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+      json[r'address'] = this.address;
+    return json;
   }
 
   /// Returns a new [SaveAddressResponse] instance and imports its values from

@@ -74,25 +74,25 @@ class AdsDto {
   String toString() => 'AdsDto[id=$id, ownerId=$ownerId, mediaLink=$mediaLink, mediaType=$mediaType, interests=$interests]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'id'] = id;
-    if (ownerId != null) {
-      _json[r'owner_id'] = ownerId;
+    final json = <String, dynamic>{};
+      json[r'id'] = this.id;
+    if (this.ownerId != null) {
+      json[r'owner_id'] = this.ownerId;
     } else {
-      _json[r'owner_id'] = null;
+      json[r'owner_id'] = null;
     }
-    if (mediaLink != null) {
-      _json[r'media_link'] = mediaLink;
+    if (this.mediaLink != null) {
+      json[r'media_link'] = this.mediaLink;
     } else {
-      _json[r'media_link'] = null;
+      json[r'media_link'] = null;
     }
-    if (mediaType != null) {
-      _json[r'media_type'] = mediaType;
+    if (this.mediaType != null) {
+      json[r'media_type'] = this.mediaType;
     } else {
-      _json[r'media_type'] = null;
+      json[r'media_type'] = null;
     }
-      _json[r'interests'] = interests;
-    return _json;
+      json[r'interests'] = this.interests;
+    return json;
   }
 
   /// Returns a new [AdsDto] instance and imports its values from

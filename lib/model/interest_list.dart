@@ -53,19 +53,19 @@ class InterestList {
   String toString() => 'InterestList[status=$status, message=$message, data=$data]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-    if (status != null) {
-      _json[r'status'] = status;
+    final json = <String, dynamic>{};
+    if (this.status != null) {
+      json[r'status'] = this.status;
     } else {
-      _json[r'status'] = null;
+      json[r'status'] = null;
     }
-    if (message != null) {
-      _json[r'message'] = message;
+    if (this.message != null) {
+      json[r'message'] = this.message;
     } else {
-      _json[r'message'] = null;
+      json[r'message'] = null;
     }
-      _json[r'data'] = data;
-    return _json;
+      json[r'data'] = this.data;
+    return json;
   }
 
   /// Returns a new [InterestList] instance and imports its values from

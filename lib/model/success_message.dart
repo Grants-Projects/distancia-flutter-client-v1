@@ -50,18 +50,18 @@ class SuccessMessage {
   String toString() => 'SuccessMessage[success=$success, message=$message]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-    if (success != null) {
-      _json[r'success'] = success;
+    final json = <String, dynamic>{};
+    if (this.success != null) {
+      json[r'success'] = this.success;
     } else {
-      _json[r'success'] = null;
+      json[r'success'] = null;
     }
-    if (message != null) {
-      _json[r'message'] = message;
+    if (this.message != null) {
+      json[r'message'] = this.message;
     } else {
-      _json[r'message'] = null;
+      json[r'message'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [SuccessMessage] instance and imports its values from

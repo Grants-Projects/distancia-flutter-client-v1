@@ -61,20 +61,20 @@ class StatusDto {
   String toString() => 'StatusDto[success=$success, message=$message, data=$data, error=$error]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'success'] = success;
-    if (message != null) {
-      _json[r'message'] = message;
+    final json = <String, dynamic>{};
+      json[r'success'] = this.success;
+    if (this.message != null) {
+      json[r'message'] = this.message;
     } else {
-      _json[r'message'] = null;
+      json[r'message'] = null;
     }
-      _json[r'data'] = data;
-    if (error != null) {
-      _json[r'error'] = error;
+      json[r'data'] = this.data;
+    if (this.error != null) {
+      json[r'error'] = this.error;
     } else {
-      _json[r'error'] = null;
+      json[r'error'] = null;
     }
-    return _json;
+    return json;
   }
 
   /// Returns a new [StatusDto] instance and imports its values from

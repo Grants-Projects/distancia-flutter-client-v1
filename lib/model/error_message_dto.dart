@@ -44,11 +44,11 @@ class ErrorMessageDto {
   String toString() => 'ErrorMessageDto[code=$code, message=$message, data=$data]';
 
   Map<String, dynamic> toJson() {
-    final _json = <String, dynamic>{};
-      _json[r'code'] = code;
-      _json[r'message'] = message;
-      _json[r'data'] = data;
-    return _json;
+    final json = <String, dynamic>{};
+      json[r'code'] = this.code;
+      json[r'message'] = this.message;
+      json[r'data'] = this.data;
+    return json;
   }
 
   /// Returns a new [ErrorMessageDto] instance and imports its values from
