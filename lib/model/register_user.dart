@@ -14,15 +14,21 @@ class RegisterUser {
   /// Returns a new [RegisterUser] instance.
   RegisterUser({
     required this.email,
-    required this.password,
+    this.id,
     required this.username,
   });
 
   /// The email of the user
   String email;
 
-  /// The password of the user
-  String password;
+  /// The id of the user
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? id;
 
   /// The username
   String username;
@@ -30,23 +36,27 @@ class RegisterUser {
   @override
   bool operator ==(Object other) => identical(this, other) || other is RegisterUser &&
      other.email == email &&
-     other.password == password &&
+     other.id == id &&
      other.username == username;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (email.hashCode) +
-    (password.hashCode) +
+    (id == null ? 0 : id!.hashCode) +
     (username.hashCode);
 
   @override
-  String toString() => 'RegisterUser[email=$email, password=$password, username=$username]';
+  String toString() => 'RegisterUser[email=$email, id=$id, username=$username]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'email'] = this.email;
-      json[r'password'] = this.password;
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
+    }
       json[r'username'] = this.username;
     return json;
   }
@@ -71,7 +81,7 @@ class RegisterUser {
 
       return RegisterUser(
         email: mapValueOfType<String>(json, r'email')!,
-        password: mapValueOfType<String>(json, r'password')!,
+        id: mapValueOfType<String>(json, r'id'),
         username: mapValueOfType<String>(json, r'username')!,
       );
     }
@@ -123,7 +133,6 @@ class RegisterUser {
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
     'email',
-    'password',
     'username',
   };
 }
