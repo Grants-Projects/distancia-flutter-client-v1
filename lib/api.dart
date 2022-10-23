@@ -31,13 +31,14 @@ part 'api/ads_api.dart';
 part 'api/interests_api.dart';
 part 'api/milestone_api.dart';
 part 'api/onboarding_api.dart';
-part 'api/register_api.dart';
+part 'api/user_api.dart';
 
 part 'model/ads_dto.dart';
 part 'model/ads_list.dart';
 part 'model/error_message_dto.dart';
 part 'model/interest_dto.dart';
-part 'model/interest_list.dart';
+part 'model/login_user.dart';
+part 'model/login_user_response.dart';
 part 'model/milestone_covered.dart';
 part 'model/register_user.dart';
 part 'model/register_user_response.dart';

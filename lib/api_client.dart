@@ -189,8 +189,10 @@ class ApiClient {
           return ErrorMessageDto.fromJson(value);
         case 'InterestDto':
           return InterestDto.fromJson(value);
-        case 'InterestList':
-          return InterestList.fromJson(value);
+        case 'LoginUser':
+          return LoginUser.fromJson(value);
+        case 'LoginUserResponse':
+          return LoginUserResponse.fromJson(value);
         case 'MilestoneCovered':
           return MilestoneCovered.fromJson(value);
         case 'RegisterUser':

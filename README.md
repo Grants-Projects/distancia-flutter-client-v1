@@ -67,7 +67,8 @@ Class | Method | HTTP request | Description
 *InterestsApi* | [**interests**](doc//InterestsApi.md#interests) | **GET** /interests | fetch all interests
 *MilestoneApi* | [**milestoneCovered**](doc//MilestoneApi.md#milestonecovered) | **POST** /milestone/covered | Endpoint to update user's milestone
 *OnboardingApi* | [**saveUserAddress**](doc//OnboardingApi.md#saveuseraddress) | **POST** /onboarding/address | Endpoint to save user's address to database
-*RegisterApi* | [**userRegister**](doc//RegisterApi.md#userregister) | **POST** /user/register | Endpoint to register user
+*UserApi* | [**loginUser**](doc//UserApi.md#loginuser) | **POST** /user/login | Endpoint to login user
+*UserApi* | [**userRegister**](doc//UserApi.md#userregister) | **POST** /user/register | Endpoint to register user
 
 
 ## Documentation For Models
@@ -76,7 +77,8 @@ Class | Method | HTTP request | Description
  - [AdsList](doc//AdsList.md)
  - [ErrorMessageDto](doc//ErrorMessageDto.md)
  - [InterestDto](doc//InterestDto.md)
- - [InterestList](doc//InterestList.md)
+ - [LoginUser](doc//LoginUser.md)
+ - [LoginUserResponse](doc//LoginUserResponse.md)
  - [MilestoneCovered](doc//MilestoneCovered.md)
  - [RegisterUser](doc//RegisterUser.md)
  - [RegisterUserResponse](doc//RegisterUserResponse.md)

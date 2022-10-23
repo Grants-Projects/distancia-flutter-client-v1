@@ -49,7 +49,7 @@ class InterestsApi {
   /// fetch all interests
   ///
   /// fetch all list of interests
-  Future<InterestList?> interests() async {
+  Future<List<InterestDto>?> interests() async {
     final response = await interestsWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -58,8 +58,11 @@ class InterestsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'InterestList',) as InterestList;
-    
+      final responseBody = await _decodeBodyBytes(response);
+      return (await apiClient.deserializeAsync(responseBody, 'List<InterestDto>') as List)
+        .cast<InterestDto>()
+        .toList();
+
     }
     return null;
   }

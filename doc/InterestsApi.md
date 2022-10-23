@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **interests**
-> InterestList interests()
+> List<InterestDto> interests()
 
 fetch all interests
 
@@ -44,7 +44,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InterestList**](InterestList.md)
+[**List<InterestDto>**](InterestDto.md)
 
 ### Authorization
 

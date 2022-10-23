@@ -15,6 +15,10 @@ class InterestDto {
   InterestDto({
     required this.id,
     required this.name,
+    required this.url,
+    required this.status,
+    required this.createdAt,
+    required this.updatedAt,
   });
 
   /// The id of interest
@@ -23,24 +27,48 @@ class InterestDto {
   /// The name of the interest
   String name;
 
+  /// The url of the interest
+  String url;
+
+  /// Status
+  String status;
+
+  /// Timestamp field.
+  DateTime createdAt;
+
+  /// Timestamp field.
+  DateTime updatedAt;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is InterestDto &&
      other.id == id &&
-     other.name == name;
+     other.name == name &&
+     other.url == url &&
+     other.status == status &&
+     other.createdAt == createdAt &&
+     other.updatedAt == updatedAt;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (name.hashCode);
+    (name.hashCode) +
+    (url.hashCode) +
+    (status.hashCode) +
+    (createdAt.hashCode) +
+    (updatedAt.hashCode);
 
   @override
-  String toString() => 'InterestDto[id=$id, name=$name]';
+  String toString() => 'InterestDto[id=$id, name=$name, url=$url, status=$status, createdAt=$createdAt, updatedAt=$updatedAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'id'] = this.id;
       json[r'name'] = this.name;
+      json[r'url'] = this.url;
+      json[r'status'] = this.status;
+      json[r'createdAt'] = this.createdAt.toUtc().toIso8601String();
+      json[r'updatedAt'] = this.updatedAt.toUtc().toIso8601String();
     return json;
   }
 
@@ -65,6 +93,10 @@ class InterestDto {
       return InterestDto(
         id: mapValueOfType<String>(json, r'id')!,
         name: mapValueOfType<String>(json, r'name')!,
+        url: mapValueOfType<String>(json, r'url')!,
+        status: mapValueOfType<String>(json, r'status')!,
+        createdAt: mapDateTime(json, r'createdAt', '')!,
+        updatedAt: mapDateTime(json, r'updatedAt', '')!,
       );
     }
     return null;
@@ -116,6 +148,10 @@ class InterestDto {
   static const requiredKeys = <String>{
     'id',
     'name',
+    'url',
+    'status',
+    'createdAt',
+    'updatedAt',
   };
 }
 
