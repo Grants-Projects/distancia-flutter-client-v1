@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **loginUser**
-> RegisterUserResponse loginUser(loginUser)
+> LoginUserResponse loginUser(loginUser)
 
 Endpoint to login user
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RegisterUserResponse**](RegisterUserResponse.md)
+[**LoginUserResponse**](LoginUserResponse.md)
 
 ### Authorization
 

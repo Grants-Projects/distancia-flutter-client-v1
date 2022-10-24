@@ -53,7 +53,7 @@ class UserApi {
   /// Parameters:
   ///
   /// * [LoginUser] loginUser:
-  Future<RegisterUserResponse?> loginUser({ LoginUser? loginUser, }) async {
+  Future<LoginUserResponse?> loginUser({ LoginUser? loginUser, }) async {
     final response = await loginUserWithHttpInfo( loginUser: loginUser, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -62,7 +62,7 @@ class UserApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RegisterUserResponse',) as RegisterUserResponse;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'LoginUserResponse',) as LoginUserResponse;
     
     }
     return null;

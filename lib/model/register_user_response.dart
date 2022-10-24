@@ -14,33 +14,40 @@ class RegisterUserResponse {
   /// Returns a new [RegisterUserResponse] instance.
   RegisterUserResponse({
     required this.id,
-    required this.token,
+    required this.email,
+    required this.username,
   });
 
   /// The id of the user
   String id;
 
   /// The user token
-  String token;
+  String email;
+
+  /// The username
+  String username;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is RegisterUserResponse &&
      other.id == id &&
-     other.token == token;
+     other.email == email &&
+     other.username == username;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (token.hashCode);
+    (email.hashCode) +
+    (username.hashCode);
 
   @override
-  String toString() => 'RegisterUserResponse[id=$id, token=$token]';
+  String toString() => 'RegisterUserResponse[id=$id, email=$email, username=$username]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'id'] = this.id;
-      json[r'token'] = this.token;
+      json[r'email'] = this.email;
+      json[r'username'] = this.username;
     return json;
   }
 
@@ -64,7 +71,8 @@ class RegisterUserResponse {
 
       return RegisterUserResponse(
         id: mapValueOfType<String>(json, r'id')!,
-        token: mapValueOfType<String>(json, r'token')!,
+        email: mapValueOfType<String>(json, r'email')!,
+        username: mapValueOfType<String>(json, r'username')!,
       );
     }
     return null;
@@ -115,7 +123,8 @@ class RegisterUserResponse {
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
     'id',
-    'token',
+    'email',
+    'username',
   };
 }
 

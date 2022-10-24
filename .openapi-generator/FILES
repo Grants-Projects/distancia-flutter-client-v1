@@ -49,6 +49,3 @@ lib/model/status_dto.dart
 lib/model/success_message.dart
 lib/model/user_address.dart
 pubspec.yaml
-test/login_user_response_test.dart
-test/login_user_test.dart
-test/user_api_test.dart
