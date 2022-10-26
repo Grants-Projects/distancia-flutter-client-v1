@@ -14,20 +14,14 @@ class LoginUser {
   /// Returns a new [LoginUser] instance.
   LoginUser({
     required this.email,
-    this.password,
+    required this.password,
   });
 
   /// The email of the user
   String email;
 
   /// The password of the user
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? password;
+  String password;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is LoginUser &&
@@ -38,7 +32,7 @@ class LoginUser {
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (email.hashCode) +
-    (password == null ? 0 : password!.hashCode);
+    (password.hashCode);
 
   @override
   String toString() => 'LoginUser[email=$email, password=$password]';
@@ -46,11 +40,7 @@ class LoginUser {
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'email'] = this.email;
-    if (this.password != null) {
       json[r'password'] = this.password;
-    } else {
-      json[r'password'] = null;
-    }
     return json;
   }
 
@@ -74,7 +64,7 @@ class LoginUser {
 
       return LoginUser(
         email: mapValueOfType<String>(json, r'email')!,
-        password: mapValueOfType<String>(json, r'password'),
+        password: mapValueOfType<String>(json, r'password')!,
       );
     }
     return null;
@@ -125,6 +115,7 @@ class LoginUser {
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
     'email',
+    'password',
   };
 }
 
