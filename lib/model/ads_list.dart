@@ -13,10 +13,65 @@ part of openapi.api;
 class AdsList {
   /// Returns a new [AdsList] instance.
   AdsList({
+    this.id,
+    this.ownerId,
+    this.mediaLink,
+    this.mediaType,
+    this.interestId,
+    this.description,
     this.status,
-    this.message,
-    this.data = const [],
+    this.duration,
+    this.createdAt,
+    this.updatedAt,
   });
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? id;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? ownerId;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? mediaLink;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? mediaType;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? interestId;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? description;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -32,39 +87,108 @@ class AdsList {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  String? message;
+  int? duration;
 
-  List<AdsDto> data;
+  /// Timestamp field.
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? createdAt;
+
+  /// Timestamp field.
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? updatedAt;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is AdsList &&
+     other.id == id &&
+     other.ownerId == ownerId &&
+     other.mediaLink == mediaLink &&
+     other.mediaType == mediaType &&
+     other.interestId == interestId &&
+     other.description == description &&
      other.status == status &&
-     other.message == message &&
-     other.data == data;
+     other.duration == duration &&
+     other.createdAt == createdAt &&
+     other.updatedAt == updatedAt;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
+    (ownerId == null ? 0 : ownerId!.hashCode) +
+    (mediaLink == null ? 0 : mediaLink!.hashCode) +
+    (mediaType == null ? 0 : mediaType!.hashCode) +
+    (interestId == null ? 0 : interestId!.hashCode) +
+    (description == null ? 0 : description!.hashCode) +
     (status == null ? 0 : status!.hashCode) +
-    (message == null ? 0 : message!.hashCode) +
-    (data.hashCode);
+    (duration == null ? 0 : duration!.hashCode) +
+    (createdAt == null ? 0 : createdAt!.hashCode) +
+    (updatedAt == null ? 0 : updatedAt!.hashCode);
 
   @override
-  String toString() => 'AdsList[status=$status, message=$message, data=$data]';
+  String toString() => 'AdsList[id=$id, ownerId=$ownerId, mediaLink=$mediaLink, mediaType=$mediaType, interestId=$interestId, description=$description, status=$status, duration=$duration, createdAt=$createdAt, updatedAt=$updatedAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
+    }
+    if (this.ownerId != null) {
+      json[r'ownerId'] = this.ownerId;
+    } else {
+      json[r'ownerId'] = null;
+    }
+    if (this.mediaLink != null) {
+      json[r'mediaLink'] = this.mediaLink;
+    } else {
+      json[r'mediaLink'] = null;
+    }
+    if (this.mediaType != null) {
+      json[r'mediaType'] = this.mediaType;
+    } else {
+      json[r'mediaType'] = null;
+    }
+    if (this.interestId != null) {
+      json[r'interestId'] = this.interestId;
+    } else {
+      json[r'interestId'] = null;
+    }
+    if (this.description != null) {
+      json[r'description'] = this.description;
+    } else {
+      json[r'description'] = null;
+    }
     if (this.status != null) {
       json[r'status'] = this.status;
     } else {
       json[r'status'] = null;
     }
-    if (this.message != null) {
-      json[r'message'] = this.message;
+    if (this.duration != null) {
+      json[r'duration'] = this.duration;
     } else {
-      json[r'message'] = null;
+      json[r'duration'] = null;
     }
-      json[r'data'] = this.data;
+    if (this.createdAt != null) {
+      json[r'createdAt'] = this.createdAt!.toUtc().toIso8601String();
+    } else {
+      json[r'createdAt'] = null;
+    }
+    if (this.updatedAt != null) {
+      json[r'updatedAt'] = this.updatedAt!.toUtc().toIso8601String();
+    } else {
+      json[r'updatedAt'] = null;
+    }
     return json;
   }
 
@@ -87,9 +211,16 @@ class AdsList {
       }());
 
       return AdsList(
+        id: mapValueOfType<String>(json, r'id'),
+        ownerId: mapValueOfType<String>(json, r'ownerId'),
+        mediaLink: mapValueOfType<String>(json, r'mediaLink'),
+        mediaType: mapValueOfType<String>(json, r'mediaType'),
+        interestId: mapValueOfType<String>(json, r'interestId'),
+        description: mapValueOfType<String>(json, r'description'),
         status: mapValueOfType<String>(json, r'status'),
-        message: mapValueOfType<String>(json, r'message'),
-        data: AdsDto.listFromJson(json[r'data']) ?? const [],
+        duration: mapValueOfType<int>(json, r'duration'),
+        createdAt: mapDateTime(json, r'createdAt', ''),
+        updatedAt: mapDateTime(json, r'updatedAt', ''),
       );
     }
     return null;
