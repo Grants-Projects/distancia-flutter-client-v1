@@ -11,7 +11,7 @@
 part of openapi.api;
 
 class ApiClient {
-  ApiClient({this.basePath = 'https://distancia-dlt.herokuapp.com', this.authentication,});
+  ApiClient({this.basePath = 'https://distancia-dtl.herokuapp.com', this.authentication,});
 
   final String basePath;
   final Authentication? authentication;
