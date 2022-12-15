@@ -27,6 +27,7 @@ part 'auth/oauth.dart';
 part 'auth/http_basic_auth.dart';
 part 'auth/http_bearer_auth.dart';
 
+part 'api/account_api.dart';
 part 'api/ads_api.dart';
 part 'api/interests_api.dart';
 part 'api/milestone_api.dart';
@@ -35,6 +36,7 @@ part 'api/user_api.dart';
 
 part 'model/ads_dto.dart';
 part 'model/ads_list.dart';
+part 'model/balance_response.dart';
 part 'model/error_message_dto.dart';
 part 'model/interest_dto.dart';
 part 'model/login_user.dart';

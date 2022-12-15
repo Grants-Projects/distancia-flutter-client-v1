@@ -46,13 +46,14 @@ import 'package:openapi/api.dart';
 // String yourTokenGeneratorFunction() { ... }
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearerToken').setAccessToken(yourTokenGeneratorFunction);
 
-final api_instance = AdsApi();
+final api_instance = AccountApi();
+final accountId = accountId_example; // String | User identifier in path
 
 try {
-    final result = api_instance.ads();
+    final result = api_instance.fetchFuelTokenBalance(accountId);
     print(result);
 } catch (e) {
-    print('Exception when calling AdsApi->ads: $e\n');
+    print('Exception when calling AccountApi->fetchFuelTokenBalance: $e\n');
 }
 
 ```
@@ -63,6 +64,7 @@ All URIs are relative to *https://distancia-dtl.herokuapp.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountApi* | [**fetchFuelTokenBalance**](doc//AccountApi.md#fetchfueltokenbalance) | **GET** /user/{accountId}/balance | fetch fuel token balance
 *AdsApi* | [**ads**](doc//AdsApi.md#ads) | **GET** /ads | fetch all ads
 *InterestsApi* | [**interests**](doc//InterestsApi.md#interests) | **GET** /interests | fetch all interests
 *MilestoneApi* | [**milestoneCovered**](doc//MilestoneApi.md#milestonecovered) | **POST** /milestone/covered | Endpoint to update user's milestone
@@ -75,6 +77,7 @@ Class | Method | HTTP request | Description
 
  - [AdsDto](doc//AdsDto.md)
  - [AdsList](doc//AdsList.md)
+ - [BalanceResponse](doc//BalanceResponse.md)
  - [ErrorMessageDto](doc//ErrorMessageDto.md)
  - [InterestDto](doc//InterestDto.md)
  - [LoginUser](doc//LoginUser.md)

@@ -185,6 +185,8 @@ class ApiClient {
           return AdsDto.fromJson(value);
         case 'AdsList':
           return AdsList.fromJson(value);
+        case 'BalanceResponse':
+          return BalanceResponse.fromJson(value);
         case 'ErrorMessageDto':
           return ErrorMessageDto.fromJson(value);
         case 'InterestDto':

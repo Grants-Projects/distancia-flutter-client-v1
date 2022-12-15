@@ -2,9 +2,11 @@
 .travis.yml
 README.md
 analysis_options.yaml
+doc/AccountApi.md
 doc/AdsApi.md
 doc/AdsDto.md
 doc/AdsList.md
+doc/BalanceResponse.md
 doc/ErrorMessageDto.md
 doc/InterestDto.md
 doc/InterestsApi.md
@@ -22,6 +24,7 @@ doc/UserAddress.md
 doc/UserApi.md
 git_push.sh
 lib/api.dart
+lib/api/account_api.dart
 lib/api/ads_api.dart
 lib/api/interests_api.dart
 lib/api/milestone_api.dart
@@ -37,6 +40,7 @@ lib/auth/http_bearer_auth.dart
 lib/auth/oauth.dart
 lib/model/ads_dto.dart
 lib/model/ads_list.dart
+lib/model/balance_response.dart
 lib/model/error_message_dto.dart
 lib/model/interest_dto.dart
 lib/model/login_user.dart
@@ -49,3 +53,5 @@ lib/model/status_dto.dart
 lib/model/success_message.dart
 lib/model/user_address.dart
 pubspec.yaml
+test/account_api_test.dart
+test/balance_response_test.dart
