@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
 **duration** | **int** |  | [optional] 
+**thumbnail** | **String** |  | [optional] 
+**title** | **String** |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) | Timestamp field. | [optional] 
 **updatedAt** | [**DateTime**](DateTime.md) | Timestamp field. | [optional] 
 

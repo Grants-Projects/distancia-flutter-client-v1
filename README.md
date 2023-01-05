@@ -66,6 +66,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountApi* | [**fetchFuelTokenBalance**](doc//AccountApi.md#fetchfueltokenbalance) | **GET** /user/{accountId}/balance | fetch fuel token balance
 *AdsApi* | [**ads**](doc//AdsApi.md#ads) | **GET** /ads | fetch all ads
+*AdsApi* | [**fetchAdsByInterest**](doc//AdsApi.md#fetchadsbyinterest) | **GET** /ads/user/{userId}/interests/{interestId} | fetch ads by interest
 *InterestsApi* | [**interests**](doc//InterestsApi.md#interests) | **GET** /interests | fetch all interests
 *MilestoneApi* | [**milestoneCovered**](doc//MilestoneApi.md#milestonecovered) | **POST** /milestone/covered | Endpoint to update user's milestone
 *OnboardingApi* | [**saveUserAddress**](doc//OnboardingApi.md#saveuseraddress) | **POST** /onboarding/address | Endpoint to save user's address to database

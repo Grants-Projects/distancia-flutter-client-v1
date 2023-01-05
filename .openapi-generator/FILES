@@ -53,5 +53,3 @@ lib/model/status_dto.dart
 lib/model/success_message.dart
 lib/model/user_address.dart
 pubspec.yaml
-test/account_api_test.dart
-test/balance_response_test.dart

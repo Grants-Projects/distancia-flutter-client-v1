@@ -16,3 +16,4 @@ doc/api/
 # Mac
 .DS_Store
 api-spec.yaml
+common.yaml

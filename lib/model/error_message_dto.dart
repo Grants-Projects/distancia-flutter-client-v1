@@ -13,13 +13,19 @@ part of openapi.api;
 class ErrorMessageDto {
   /// Returns a new [ErrorMessageDto] instance.
   ErrorMessageDto({
-    required this.code,
+    this.status,
     required this.message,
     this.data = const {},
   });
 
   /// Error code
-  String code;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? status;
 
   /// Descriptive error message
   String message;
@@ -29,23 +35,27 @@ class ErrorMessageDto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ErrorMessageDto &&
-     other.code == code &&
+     other.status == status &&
      other.message == message &&
      other.data == data;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (code.hashCode) +
+    (status == null ? 0 : status!.hashCode) +
     (message.hashCode) +
     (data.hashCode);
 
   @override
-  String toString() => 'ErrorMessageDto[code=$code, message=$message, data=$data]';
+  String toString() => 'ErrorMessageDto[status=$status, message=$message, data=$data]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-      json[r'code'] = this.code;
+    if (this.status != null) {
+      json[r'status'] = this.status;
+    } else {
+      json[r'status'] = null;
+    }
       json[r'message'] = this.message;
       json[r'data'] = this.data;
     return json;
@@ -70,7 +80,7 @@ class ErrorMessageDto {
       }());
 
       return ErrorMessageDto(
-        code: mapValueOfType<String>(json, r'code')!,
+        status: mapValueOfType<String>(json, r'status'),
         message: mapValueOfType<String>(json, r'message')!,
         data: mapCastOfType<String, Object>(json, r'data') ?? const {},
       );
@@ -122,7 +132,6 @@ class ErrorMessageDto {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
-    'code',
     'message',
   };
 }

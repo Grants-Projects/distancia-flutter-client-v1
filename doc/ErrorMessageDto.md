@@ -8,7 +8,7 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **String** | Error code | 
+**status** | **String** | Error code | [optional] 
 **message** | **String** | Descriptive error message | 
 **data** | [**Map<String, Object>**](Object.md) | Additional data for this error message. | [optional] [default to const {}]
 

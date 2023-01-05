@@ -21,6 +21,8 @@ class AdsList {
     this.description,
     this.status,
     this.duration,
+    this.thumbnail,
+    this.title,
     this.createdAt,
     this.updatedAt,
   });
@@ -89,6 +91,22 @@ class AdsList {
   ///
   int? duration;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? thumbnail;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? title;
+
   /// Timestamp field.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -117,6 +135,8 @@ class AdsList {
      other.description == description &&
      other.status == status &&
      other.duration == duration &&
+     other.thumbnail == thumbnail &&
+     other.title == title &&
      other.createdAt == createdAt &&
      other.updatedAt == updatedAt;
 
@@ -131,11 +151,13 @@ class AdsList {
     (description == null ? 0 : description!.hashCode) +
     (status == null ? 0 : status!.hashCode) +
     (duration == null ? 0 : duration!.hashCode) +
+    (thumbnail == null ? 0 : thumbnail!.hashCode) +
+    (title == null ? 0 : title!.hashCode) +
     (createdAt == null ? 0 : createdAt!.hashCode) +
     (updatedAt == null ? 0 : updatedAt!.hashCode);
 
   @override
-  String toString() => 'AdsList[id=$id, ownerId=$ownerId, mediaLink=$mediaLink, mediaType=$mediaType, interestId=$interestId, description=$description, status=$status, duration=$duration, createdAt=$createdAt, updatedAt=$updatedAt]';
+  String toString() => 'AdsList[id=$id, ownerId=$ownerId, mediaLink=$mediaLink, mediaType=$mediaType, interestId=$interestId, description=$description, status=$status, duration=$duration, thumbnail=$thumbnail, title=$title, createdAt=$createdAt, updatedAt=$updatedAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -179,6 +201,16 @@ class AdsList {
     } else {
       json[r'duration'] = null;
     }
+    if (this.thumbnail != null) {
+      json[r'thumbnail'] = this.thumbnail;
+    } else {
+      json[r'thumbnail'] = null;
+    }
+    if (this.title != null) {
+      json[r'title'] = this.title;
+    } else {
+      json[r'title'] = null;
+    }
     if (this.createdAt != null) {
       json[r'createdAt'] = this.createdAt!.toUtc().toIso8601String();
     } else {
@@ -219,6 +251,8 @@ class AdsList {
         description: mapValueOfType<String>(json, r'description'),
         status: mapValueOfType<String>(json, r'status'),
         duration: mapValueOfType<int>(json, r'duration'),
+        thumbnail: mapValueOfType<String>(json, r'thumbnail'),
+        title: mapValueOfType<String>(json, r'title'),
         createdAt: mapDateTime(json, r'createdAt', ''),
         updatedAt: mapDateTime(json, r'updatedAt', ''),
       );
