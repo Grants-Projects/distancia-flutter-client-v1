@@ -39,6 +39,7 @@ part 'model/ads_list.dart';
 part 'model/balance_response.dart';
 part 'model/error_message_dto.dart';
 part 'model/interest_dto.dart';
+part 'model/link_interest.dart';
 part 'model/login_user.dart';
 part 'model/login_user_response.dart';
 part 'model/milestone_covered.dart';

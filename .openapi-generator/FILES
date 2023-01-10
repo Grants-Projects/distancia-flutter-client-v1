@@ -10,6 +10,7 @@ doc/BalanceResponse.md
 doc/ErrorMessageDto.md
 doc/InterestDto.md
 doc/InterestsApi.md
+doc/LinkInterest.md
 doc/LoginUser.md
 doc/LoginUserResponse.md
 doc/MilestoneApi.md
@@ -43,6 +44,7 @@ lib/model/ads_list.dart
 lib/model/balance_response.dart
 lib/model/error_message_dto.dart
 lib/model/interest_dto.dart
+lib/model/link_interest.dart
 lib/model/login_user.dart
 lib/model/login_user_response.dart
 lib/model/milestone_covered.dart
@@ -53,3 +55,4 @@ lib/model/status_dto.dart
 lib/model/success_message.dart
 lib/model/user_address.dart
 pubspec.yaml
+test/link_interest_test.dart

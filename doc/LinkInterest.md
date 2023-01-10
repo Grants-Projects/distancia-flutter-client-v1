@@ -1,4 +1,4 @@
-# openapi.model.LoginUserResponse
+# openapi.model.LinkInterest
 
 ## Load the model package
 ```dart
@@ -8,11 +8,7 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | The id of the user | 
-**email** | **String** | The user email | 
-**username** | **String** | The username | 
-**token** | **String** | The token | 
-**interests** | **List<String>** |  | [optional] [default to const []]
+**interests** | **List<String>** | user interests | [default to const []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,6 +17,7 @@ class LoginUserResponse {
     required this.email,
     required this.username,
     required this.token,
+    this.interests = const [],
   });
 
   /// The id of the user
@@ -31,12 +32,15 @@ class LoginUserResponse {
   /// The token
   String token;
 
+  List<String> interests;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is LoginUserResponse &&
      other.id == id &&
      other.email == email &&
      other.username == username &&
-     other.token == token;
+     other.token == token &&
+     other.interests == interests;
 
   @override
   int get hashCode =>
@@ -44,10 +48,11 @@ class LoginUserResponse {
     (id.hashCode) +
     (email.hashCode) +
     (username.hashCode) +
-    (token.hashCode);
+    (token.hashCode) +
+    (interests.hashCode);
 
   @override
-  String toString() => 'LoginUserResponse[id=$id, email=$email, username=$username, token=$token]';
+  String toString() => 'LoginUserResponse[id=$id, email=$email, username=$username, token=$token, interests=$interests]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -55,6 +60,7 @@ class LoginUserResponse {
       json[r'email'] = this.email;
       json[r'username'] = this.username;
       json[r'token'] = this.token;
+      json[r'interests'] = this.interests;
     return json;
   }
 
@@ -81,6 +87,9 @@ class LoginUserResponse {
         email: mapValueOfType<String>(json, r'email')!,
         username: mapValueOfType<String>(json, r'username')!,
         token: mapValueOfType<String>(json, r'token')!,
+        interests: json[r'interests'] is List
+            ? (json[r'interests'] as List).cast<String>()
+            : const [],
       );
     }
     return null;

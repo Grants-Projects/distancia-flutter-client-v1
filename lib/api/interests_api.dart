@@ -66,4 +66,67 @@ class InterestsApi {
     }
     return null;
   }
+
+  /// Link user to interests
+  ///
+  /// This endpoint fetches ads by interest
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] userId (required):
+  ///   User identifier in path
+  ///
+  /// * [LinkInterest] linkInterest:
+  Future<Response> linkUserInterestsWithHttpInfo(String userId, { LinkInterest? linkInterest, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/interests/user/{userId}/link-interest'
+      .replaceAll('{userId}', userId);
+
+    // ignore: prefer_final_locals
+    Object? postBody = linkInterest;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'PUT',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Link user to interests
+  ///
+  /// This endpoint fetches ads by interest
+  ///
+  /// Parameters:
+  ///
+  /// * [String] userId (required):
+  ///   User identifier in path
+  ///
+  /// * [LinkInterest] linkInterest:
+  Future<SuccessMessage?> linkUserInterests(String userId, { LinkInterest? linkInterest, }) async {
+    final response = await linkUserInterestsWithHttpInfo(userId,  linkInterest: linkInterest, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SuccessMessage',) as SuccessMessage;
+    
+    }
+    return null;
+  }
 }

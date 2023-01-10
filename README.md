@@ -68,6 +68,7 @@ Class | Method | HTTP request | Description
 *AdsApi* | [**ads**](doc//AdsApi.md#ads) | **GET** /ads | fetch all ads
 *AdsApi* | [**fetchAdsByInterest**](doc//AdsApi.md#fetchadsbyinterest) | **GET** /ads/user/{userId}/interests/{interestId} | fetch ads by interest
 *InterestsApi* | [**interests**](doc//InterestsApi.md#interests) | **GET** /interests | fetch all interests
+*InterestsApi* | [**linkUserInterests**](doc//InterestsApi.md#linkuserinterests) | **PUT** /interests/user/{userId}/link-interest | Link user to interests
 *MilestoneApi* | [**milestoneCovered**](doc//MilestoneApi.md#milestonecovered) | **POST** /milestone/covered | Endpoint to update user's milestone
 *OnboardingApi* | [**saveUserAddress**](doc//OnboardingApi.md#saveuseraddress) | **POST** /onboarding/address | Endpoint to save user's address to database
 *UserApi* | [**loginUser**](doc//UserApi.md#loginuser) | **POST** /user/login | Endpoint to login user
@@ -81,6 +82,7 @@ Class | Method | HTTP request | Description
  - [BalanceResponse](doc//BalanceResponse.md)
  - [ErrorMessageDto](doc//ErrorMessageDto.md)
  - [InterestDto](doc//InterestDto.md)
+ - [LinkInterest](doc//LinkInterest.md)
  - [LoginUser](doc//LoginUser.md)
  - [LoginUserResponse](doc//LoginUserResponse.md)
  - [MilestoneCovered](doc//MilestoneCovered.md)
